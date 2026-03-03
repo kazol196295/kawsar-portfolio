@@ -6,14 +6,66 @@
     <title>Md Kawsar Ahmed Kazol - Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .hero-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+        .hero-photo-wrapper { flex-shrink: 0; }
+        .hero-photo {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: top center;
+            border: 4px solid var(--color-primary, #21808d);
+            box-shadow: 0 0 0 8px rgba(33,128,141,0.15), 0 12px 40px rgba(0,0,0,0.18);
+            animation: photoReveal 0.8s ease both 0.2s;
+        }
+        @keyframes photoReveal {
+            from { opacity: 0; transform: scale(0.85); }
+            to   { opacity: 1; transform: scale(1); }
+        }
+        .hero-content { flex: 1; min-width: 280px; }
+        .project-badge {
+            display: inline-block;
+            background: var(--color-primary, #21808d);
+            color: #fff;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 2px 7px;
+            border-radius: 20px;
+            vertical-align: middle;
+            margin-left: 6px;
+        }
+        .thesis-card {
+            background: var(--color-surface, #fffffe);
+            border: 1px solid var(--color-card-border, rgba(94,82,64,0.12));
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            margin-top: 1.5rem;
+        }
+        .thesis-card h3 { margin-top: 0; }
+        .thesis-card p { margin: 0.5rem 0 0; color: var(--color-text-secondary,#626c71); font-size:.95rem; line-height:1.6; }
+        .achievement-highlight {
+            background: linear-gradient(135deg,rgba(33,128,141,.08) 0%,rgba(33,128,141,.03) 100%);
+            border-left: 3px solid var(--color-primary,#21808d);
+        }
+        @media (max-width: 700px) {
+            .hero-container { flex-direction: column; gap: 2rem; }
+            .hero-photo { width: 160px; height: 160px; }
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <div class="nav-logo">
-                <a href="#home">Kazol</a>
-            </div>
+            <div class="nav-logo"><a href="#home">Kazol</a></div>
             <div class="nav-menu" id="nav-menu">
                 <a href="#home" class="nav-link">Home</a>
                 <a href="#about" class="nav-link">About</a>
@@ -24,55 +76,46 @@
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
             <div class="nav-toggle" id="nav-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-container">
+            <div class="hero-photo-wrapper">
+                <img src="Kazol_recent.jpg" alt="Md Kawsar Ahmed Kazol" class="hero-photo" />
+            </div>
             <div class="hero-content">
                 <h1 class="hero-title">Md Kawsar Ahmed Kazol</h1>
-                <h2 class="hero-subtitle">Computer Science Student & Software Developer</h2>
+                <h2 class="hero-subtitle">Computer Science Student &amp; Software Developer</h2>
                 <p class="hero-description">
-                    Passionate Computer Science student with expertise in full-stack development, 
-                    blockchain technology, and machine learning. Currently researching Android malware 
-                    detection techniques while actively solving competitive programming challenges.
+                    Passionate CSE student at KUET with expertise in full-stack development,
+                    blockchain technology, AI/ML, and competitive programming. International
+                    Data Science Olympiad 2025 Bangladesh representative — ranked Top 7 globally.
                 </p>
                 <div class="hero-buttons">
                     <a href="#projects" class="btn btn--primary">View Projects</a>
                     <a href="#contact" class="btn btn--outline">Contact Me</a>
                 </div>
                 <div class="hero-social">
-                    <a href="https://github.com/kazol196295" target="_blank" class="social-link">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/kawsar-ahmed-kazol-600340197/" target="_blank" class="social-link">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="mailto:kazol196295@gmail.com" class="social-link">
-                        <i class="fas fa-envelope"></i>
-                    </a>
+                    <a href="https://github.com/kazol196295" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/kawsar-ahmed-kazol-600340197/" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:kazol196295@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-text">
                     <h3>Career Objective</h3>
-                    <p>To pursue a demanding entry level software development role in a dynamic, competitive environment that will test my limits, broaden my technical knowledge and allow me to improve organizational dynamics.</p>
-                    
+                    <p>To pursue a demanding entry-level software development role in a dynamic, competitive environment that will test my limits, broaden my technical knowledge and allow me to improve the dynamics of the organization.</p>
                     <h3>Current Focus</h3>
-                    <p>Currently pursuing my Bachelor's degree in Computer Science and Engineering at KUET while actively engaging in competitive programming, blockchain development, and machine learning research.</p>
-                    
+                    <p>Finalizing my B.Sc. in CSE at KUET (2020–2025) while competing in international programming contests, building blockchain and AI-integrated applications, and researching Android malware detection techniques.</p>
                     <div class="problem-solving-stats">
                         <h3>Problem Solving Statistics</h3>
                         <div class="stats-grid">
@@ -85,41 +128,35 @@
                                 <span class="stat-label">Codeforces</span>
                             </div>
                             <div class="stat-item">
-                                <span class="stat-number">300+</span>
+                                <span class="stat-number">350+</span>
                                 <span class="stat-label">LeetCode</span>
                             </div>
-                            <div class="stat-item">
-                                <span class="stat-number">150+</span>
-                                <span class="stat-label">AtCoder</span>
-                            </div>
                         </div>
+                    </div>
+                    <div class="thesis-card">
+                        <h3>📄 Thesis Research</h3>
+                        <p><strong>Enhancing Permission-Based Android Malware Detection with Weighted Feature Modeling and Class-Imbalance Handling</strong> — Prioritizes critical Android permission features and integrates ML techniques like Random Forest to improve detection accuracy and recall through advanced ensemble models and feature engineering.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Education Section -->
     <section id="education" class="education">
         <div class="container">
             <h2 class="section-title">Education</h2>
             <div class="education-card">
-                <div class="education-icon">
-                    <i class="fas fa-graduation-cap"></i>
-                </div>
+                <div class="education-icon"><i class="fas fa-graduation-cap"></i></div>
                 <div class="education-content">
-                    <h3>Khulna University of Engineering & Technology</h3>
+                    <h3>Khulna University of Engineering &amp; Technology</h3>
                     <h4>B.Sc. in Computer Science and Engineering</h4>
                     <p class="education-duration">2020 – 2025</p>
-                    <p class="education-location">
-                        <i class="fas fa-map-marker-alt"></i> Khulna, Bangladesh
-                    </p>
+                    <p class="education-location"><i class="fas fa-map-marker-alt"></i> Khulna, Bangladesh</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
     <section id="skills" class="skills">
         <div class="container">
             <h2 class="section-title">Technical Skills</h2>
@@ -127,298 +164,254 @@
                 <div class="skill-category">
                     <h3>Programming Languages</h3>
                     <div class="skill-tags">
-                        <span class="skill-tag">C</span>
-                        <span class="skill-tag">C++</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">C</span><span class="skill-tag">C++</span>
+                        <span class="skill-tag">Python</span><span class="skill-tag">Java</span>
                     </div>
                 </div>
                 <div class="skill-category">
                     <h3>Web Development</h3>
                     <div class="skill-tags">
-                        <span class="skill-tag">HTML</span>
-                        <span class="skill-tag">CSS</span>
-                        <span class="skill-tag">Bootstrap</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">PHP</span>
-                        <span class="skill-tag">Laravel</span>
+                        <span class="skill-tag">HTML</span><span class="skill-tag">CSS</span>
+                        <span class="skill-tag">Bootstrap</span><span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">PHP</span><span class="skill-tag">Laravel</span>
+                        <span class="skill-tag">Next.js</span><span class="skill-tag">React.js</span>
                     </div>
                 </div>
                 <div class="skill-category">
                     <h3>Database</h3>
                     <div class="skill-tags">
-                        <span class="skill-tag">Oracle SQL</span>
-                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">Oracle SQL</span><span class="skill-tag">MySQL</span>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Mobile Development</h3>
+                    <h3>AI / Machine Learning</h3>
                     <div class="skill-tags">
-                        <span class="skill-tag">Android Studio</span>
-                        <span class="skill-tag">JavaFx</span>
+                        <span class="skill-tag">Machine Learning</span><span class="skill-tag">LangChain</span>
+                        <span class="skill-tag">FastAPI</span><span class="skill-tag">Streamlit</span>
+                        <span class="skill-tag">Whisper</span>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Tools & Frameworks</h3>
+                    <h3>Tools &amp; Frameworks</h3>
                     <div class="skill-tags">
-                        <span class="skill-tag">Git & GitHub</span>
-                        <span class="skill-tag">OpenGL</span>
-                        <span class="skill-tag">LaTeX</span>
-                        <span class="skill-tag">Machine Learning</span>
+                        <span class="skill-tag">Git &amp; GitHub</span><span class="skill-tag">OpenGL</span>
+                        <span class="skill-tag">LaTeX</span><span class="skill-tag">Arduino</span>
                     </div>
                 </div>
                 <div class="skill-category">
                     <h3>Blockchain Development</h3>
                     <div class="skill-tags">
-                        <span class="skill-tag">Hardhat</span>
-                        <span class="skill-tag">Solidity</span>
-                        <span class="skill-tag">dApp</span>
-                        <span class="skill-tag">Web3</span>
-                        <span class="skill-tag">Ether.js</span>
+                        <span class="skill-tag">Hardhat</span><span class="skill-tag">Solidity</span>
+                        <span class="skill-tag">dApp</span><span class="skill-tag">Ether.js</span>
+                        <span class="skill-tag">ERC-721</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Research Section -->
-    <section id="research" class="research">
-        <div class="container">
-            <h2 class="section-title">Current Research</h2>
-            <div class="research-card">
-                <div class="research-icon">
-                    <i class="fas fa-microscope"></i>
-                </div>
-                <div class="research-content">
-                    <h3>A Novel Approach to Android Malware Detection Using Fuzzy Analytic Hierarchy Process (Fuzzy AHP)</h3>
-                    <p class="research-status">Status: <span class="status status--warning">Ongoing</span></p>
-                    <p class="research-description">
-                        This research addresses the challenges of malware detection in Android systems by prioritizing 
-                        critical features and integrating machine learning techniques like Random Forest and XGBoost. 
-                        The objective is to improve detection accuracy and recall through advanced ensemble models and 
-                        feature engineering.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
             <h2 class="section-title">Projects</h2>
             <div class="project-filters">
                 <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="ai">AI &amp; ML</button>
                 <button class="filter-btn" data-filter="blockchain">Blockchain</button>
                 <button class="filter-btn" data-filter="web">Web</button>
-                <button class="filter-btn" data-filter="desktop">Desktop</button>
-                <button class="filter-btn" data-filter="ai">AI & Gaming</button>
+                <button class="filter-btn" data-filter="desktop">Desktop / IoT</button>
             </div>
             <div class="projects-grid">
-                <!-- Blockchain Projects -->
-                <div class="project-card" data-category="blockchain">
+                <div class="project-card" data-category="ai">
                     <div class="project-header">
-                        <h3>Voting dApp</h3>
-                        <div class="project-links">
-                            <a href="https://github.com/kazol196295" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
+                        <h3>Bilingual Bangla-English ASR <span class="project-badge">New</span></h3>
+                        <div class="project-links"><a href="https://github.com/kazol196295/bangla-english-asr" target="_blank" class="project-link"><i class="fab fa-github"></i></a></div>
                     </div>
-                    <p class="project-description">Decentralized voting application with secure blockchain integration</p>
+                    <p class="project-description">Fine-tuned Whisper Small for bilingual ASR with FastAPI backend and Streamlit UI.</p>
                     <div class="project-tech">
-                        <span class="tech-tag">Solidity</span>
-                        <span class="tech-tag">Hardhat</span>
-                        <span class="tech-tag">Next.js</span>
-                        <span class="tech-tag">Ether.js</span>
+                        <span class="tech-tag">Python</span><span class="tech-tag">Whisper</span>
+                        <span class="tech-tag">FastAPI</span><span class="tech-tag">Streamlit</span>
                     </div>
                 </div>
-
-                <div class="project-card" data-category="blockchain">
+                <div class="project-card" data-category="ai">
                     <div class="project-header">
-                        <h3>Lottery dApp</h3>
+                        <h3>Medical Report Simplifier <span class="project-badge">AI</span></h3>
                         <div class="project-links">
-                            <a href="https://github.com/kazol196295" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i>
-                            </a>
+                            <a href="https://github.com/kazol196295/medical_report_simplifier" target="_blank" class="project-link"><i
+                                    class="fab fa-github"></i></a>
+                            <a href="https://medicalreportsimplifier-kazol.streamlit.app/" target="_blank" class="project-link"><i
+                                    class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
-                    <p class="project-description">Blockchain-based lottery system with transparent random number generation</p>
+                    <p class="project-description">AI-powered medical document assistant using Tesseract OCR and Llama-3 via Groq to
+                        convert complex reports into simplified, patient-friendly insights.</p>
                     <div class="project-tech">
-                        <span class="tech-tag">Solidity</span>
-                        <span class="tech-tag">React.js</span>
-                        <span class="tech-tag">Web3</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Streamlit</span>
+                        <span class="tech-tag">Tesseract</span>
+                        <span class="tech-tag">Groq LPU</span>
                     </div>
                 </div>
-
-                <div class="project-card" data-category="blockchain">
+                <div class="project-card" data-category="ai">
                     <div class="project-header">
-                        <h3>Kazol Token</h3>
+                        <h3>Smart Restaurant Agent <span class="project-badge">New</span></h3>
                         <div class="project-links">
-                            <a href="https://github.com/kazol196295" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i>
-                            </a>
+                            <a href="https://github.com/kazol196295/smart_resturant_agent/" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
+                            <a href="https://smartresturantagent-kazol196295.streamlit.app/" target="_blank" class="project-link"><i
+                                    class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
-                    <p class="project-description">NFT token implementation using ERC-721 standard deployed on Sepolia testnet</p>
+                    <p class="project-description">AI-integrated restaurant agent using LangChain with cloud-deployed Streamlit interface.</p>
                     <div class="project-tech">
-                        <span class="tech-tag">Solidity</span>
-                        <span class="tech-tag">ERC-721</span>
-                        <span class="tech-tag">Hardhat</span>
+                        <span class="tech-tag">LangChain</span><span class="tech-tag">Python</span><span class="tech-tag">Streamlit</span>
                     </div>
                 </div>
-
-                <!-- Web Projects -->
-                <div class="project-card" data-category="web">
-                    <div class="project-header">
-                        <h3>Real Estate Platform</h3>
-                        <div class="project-links">
-                            <a href="https://github.com/kazol196295" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <p class="project-description">Comprehensive web application for buying, selling, and managing real estate properties</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">HTML5</span>
-                        <span class="tech-tag">CSS</span>
-                        <span class="tech-tag">Bootstrap</span>
-                        <span class="tech-tag">JavaScript</span>
-                        <span class="tech-tag">PHP</span>
-                        <span class="tech-tag">MySQL</span>
-                        <span class="tech-tag">Laravel</span>
-                    </div>
-                </div>
-
-                <div class="project-card" data-category="web">
-                    <div class="project-header">
-                        <h3>Travelia</h3>
-                        <div class="project-links">
-                            <a href="https://github.com/kazol196295" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <p class="project-description">Travel and tour agency platform promoting domestic tourism in Bangladesh</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">PHP</span>
-                        <span class="tech-tag">Laravel</span>
-                        <span class="tech-tag">MySQL</span>
-                    </div>
-                </div>
-
-                <!-- Desktop Projects -->
-                <div class="project-card" data-category="desktop">
-                    <div class="project-header">
-                        <h3>PetShop</h3>
-                        <div class="project-links">
-                            <a href="https://github.com/kazol196295" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <p class="project-description">Desktop application for comprehensive pet sales and inventory management</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Java</span>
-                        <span class="tech-tag">JavaFx</span>
-                        <span class="tech-tag">MySQL</span>
-                    </div>
-                </div>
-
-                <div class="project-card" data-category="desktop">
-                    <div class="project-header">
-                        <h3>Course Management System</h3>
-                        <div class="project-links">
-                            <a href="https://github.com/kazol196295" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <p class="project-description">Database-driven system for academic course administration and student management</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Oracle SQL</span>
-                        <span class="tech-tag">PL/SQL</span>
-                    </div>
-                </div>
-
-                <!-- AI Projects -->
                 <div class="project-card" data-category="ai">
                     <div class="project-header">
                         <h3>Incredible Chess Board</h3>
-                        <div class="project-links">
-                            <a href="https://github.com/kazol196295" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
+                        <div class="project-links"><a href="https://github.com/kazol196295" target="_blank" class="project-link"><i class="fab fa-github"></i></a></div>
                     </div>
-                    <p class="project-description">AI-powered chess game with advanced Minimax algorithm and Alpha Beta Pruning optimization</p>
+                    <p class="project-description">AI chess game using Minimax algorithm with Alpha-Beta Pruning optimization.</p>
                     <div class="project-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">pygame</span>
-                        <span class="tech-tag">AI Algorithms</span>
+                        <span class="tech-tag">Python</span><span class="tech-tag">pygame</span><span class="tech-tag">Minimax</span>
+                    </div>
+                </div>
+                <div class="project-card" data-category="blockchain">
+                    <div class="project-header">
+                        <h3>Decentralized Content Verification <span class="project-badge">New</span></h3>
+                        <div class="project-links"><a href="https://github.com/kazol196295" target="_blank" class="project-link"><i class="fab fa-github"></i></a></div>
+                    </div>
+                    <p class="project-description">AI-Blockchain framework for social media integrity with summarizer and explainer modules.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Blockchain</span><span class="tech-tag">Next.js</span><span class="tech-tag">AI</span>
+                    </div>
+                </div>
+                <div class="project-card" data-category="blockchain">
+                    <div class="project-header">
+                        <h3>Voting dApp</h3>
+                        <div class="project-links"><a href="https://github.com/kazol196295" target="_blank" class="project-link"><i class="fab fa-github"></i></a></div>
+                    </div>
+                    <p class="project-description">Decentralized voting application with secure blockchain integration.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Solidity</span><span class="tech-tag">Hardhat</span>
+                        <span class="tech-tag">Next.js</span><span class="tech-tag">Ether.js</span>
+                    </div>
+                </div>
+                <div class="project-card" data-category="blockchain">
+                    <div class="project-header">
+                        <h3>Lottery dApp</h3>
+                        <div class="project-links"><a href="https://github.com/kazol196295" target="_blank" class="project-link"><i class="fab fa-github"></i></a></div>
+                    </div>
+                    <p class="project-description">Blockchain-based lottery with transparent random number generation.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Solidity</span><span class="tech-tag">React.js</span><span class="tech-tag">Web3</span>
+                    </div>
+                </div>
+                <div class="project-card" data-category="blockchain">
+                    <div class="project-header">
+                        <h3>Kazol Token</h3>
+                        <div class="project-links"><a href="https://github.com/kazol196295" target="_blank" class="project-link"><i class="fab fa-github"></i></a></div>
+                    </div>
+                    <p class="project-description">NFT token using ERC-721 standard deployed on the Sepolia testnet.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Solidity</span><span class="tech-tag">ERC-721</span><span class="tech-tag">Hardhat</span>
+                    </div>
+                </div>
+                <div class="project-card" data-category="web">
+                    <div class="project-header">
+                        <h3>Real Estate Platform</h3>
+                        <div class="project-links"><a href="https://github.com/kazol196295" target="_blank" class="project-link"><i class="fab fa-github"></i></a></div>
+                    </div>
+                    <p class="project-description">Web platform for buying, selling, and managing real estate properties.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML5</span><span class="tech-tag">CSS</span><span class="tech-tag">Bootstrap</span>
+                        <span class="tech-tag">PHP</span><span class="tech-tag">MySQL</span><span class="tech-tag">Laravel</span>
+                    </div>
+                </div>
+                <div class="project-card" data-category="web">
+                    <div class="project-header">
+                        <h3>Travelia</h3>
+                        <div class="project-links"><a href="https://github.com/kazol196295" target="_blank" class="project-link"><i class="fab fa-github"></i></a></div>
+                    </div>
+                    <p class="project-description">Travel and tour agency platform promoting domestic tourism in Bangladesh.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">PHP</span><span class="tech-tag">Laravel</span><span class="tech-tag">MySQL</span>
+                    </div>
+                </div>
+                <div class="project-card" data-category="desktop">
+                    <div class="project-header">
+                        <h3>PetShop</h3>
+                        <div class="project-links"><a href="https://github.com/kazol196295" target="_blank" class="project-link"><i class="fab fa-github"></i></a></div>
+                    </div>
+                    <p class="project-description">Desktop application for pet sales and inventory management.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Java</span><span class="tech-tag">JavaFx</span><span class="tech-tag">MySQL</span>
+                    </div>
+                </div>
+                <div class="project-card" data-category="desktop">
+                    <div class="project-header">
+                        <h3>Course Management System</h3>
+                        <div class="project-links"><a href="https://github.com/kazol196295" target="_blank" class="project-link"><i class="fab fa-github"></i></a></div>
+                    </div>
+                    <p class="project-description">Database-driven system for academic course and student administration.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Oracle SQL</span><span class="tech-tag">PL/SQL</span>
+                    </div>
+                </div>
+                <div class="project-card" data-category="desktop">
+                    <div class="project-header">
+                        <h3>Pet Feeder</h3>
+                        <div class="project-links"><a href="https://github.com/kazol196295" target="_blank" class="project-link"><i class="fab fa-github"></i></a></div>
+                    </div>
+                    <p class="project-description">IoT automated pet feeding system built with Arduino.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Arduino</span><span class="tech-tag">C++</span><span class="tech-tag">IoT</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Achievements Section -->
     <section id="achievements" class="achievements">
         <div class="container">
             <h2 class="section-title">Achievements</h2>
             <div class="achievements-grid">
-                <div class="achievement-card">
-                    <div class="achievement-icon">
-                        <i class="fas fa-trophy"></i>
+                <div class="achievement-card achievement-highlight">
+                    <div class="achievement-icon"><i class="fas fa-globe"></i></div>
+                    <div class="achievement-content">
+                        <h3>International Data Science Olympiad 2025</h3>
+                        <p class="achievement-position">Top 7 Globally · AI Category · Hong Kong</p>
+                        <p style="font-size:.85rem;color:var(--color-text-secondary,#626c71);margin-top:4px;">Bangladesh Representative — Team NeuroChain</p>
                     </div>
+                </div>
+                <div class="achievement-card achievement-highlight">
+                    <div class="achievement-icon"><i class="fas fa-link"></i></div>
+                    <div class="achievement-content">
+                        <h3>Bangladesh Blockchain Olympiad</h3>
+                        <p class="achievement-position">6th Place · National Round · AI Category</p>
+                    </div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon"><i class="fas fa-chart-bar"></i></div>
+                    <div class="achievement-content">
+                        <h3>Game of Datathon — Bitfest 2025</h3>
+                        <p class="achievement-position">20th out of 120 teams · Kaggle</p>
+                    </div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon"><i class="fas fa-code"></i></div>
+                    <div class="achievement-content">
+                        <h3>Intra KUET Programming Contest 2022</h3>
+                        <p class="achievement-position">12th Position</p>
+                    </div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon"><i class="fas fa-trophy"></i></div>
                     <div class="achievement-content">
                         <h3>National High School Programming Contest</h3>
-                        <p class="achievement-position">3rd Nationally, 1st Divisionally</p>
-                    </div>
-                </div>
-                
-                <div class="achievement-card">
-                    <div class="achievement-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <div class="achievement-content">
-                        <h3>Intra KUET Programming Contest</h3>
-                        <p class="achievement-position">12th position (2022)</p>
-                    </div>
-                </div>
-                
-                <div class="achievement-card">
-                    <div class="achievement-icon">
-                        <i class="fas fa-award"></i>
-                    </div>
-                    <div class="achievement-content">
-                        <h3>KUET Technical Scholarship</h3>
-                        <p class="achievement-position">Recipient (2020-21)</p>
-                    </div>
-                </div>
-                
-                <div class="achievement-card">
-                    <div class="achievement-icon">
-                        <i class="fas fa-chart-bar"></i>
-                    </div>
-                    <div class="achievement-content">
-                        <h3>Kaggle Datathon - Bitfest 2025</h3>
-                        <p class="achievement-position">20th out of 120 teams</p>
-                    </div>
-                </div>
-                
-                <div class="achievement-card">
-                    <div class="achievement-icon">
-                        <i class="fas fa-atom"></i>
-                    </div>
-                    <div class="achievement-content">
-                        <h3>Bangladesh Physics Olympiad</h3>
-                        <p class="achievement-position">Participant</p>
+                        <p class="achievement-position">6th Nationally · 1st Divisionally</p>
                     </div>
                 </div>
             </div>
-            
-            <!-- Certifications -->
             <div class="certifications">
                 <h3>DataCamp Certifications</h3>
                 <div class="certification-tags">
@@ -434,7 +427,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
@@ -443,23 +435,17 @@
                     <h3>Contact Information</h3>
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
-                        <span>kazol196295@gmail.com</span>
+                        <span><a href="mailto:kazol196295@gmail.com">kazol196295@gmail.com</a></span>
                     </div>
                     <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <span>01521474251</span>
+                        <i class="fas fa-phone"></i><span>01521474251</span>
                     </div>
                     <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Khulna, Bangladesh</span>
+                        <i class="fas fa-map-marker-alt"></i><span>Khulna, Bangladesh</span>
                     </div>
                     <div class="contact-social">
-                        <a href="https://github.com/kazol196295" target="_blank" class="social-link">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/kawsar-ahmed-kazol-600340197/" target="_blank" class="social-link">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
+                        <a href="https://github.com/kazol196295" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/kawsar-ahmed-kazol-600340197/" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
                 <div class="contact-form-container">
@@ -491,10 +477,14 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <p>&copy; 2025 Md Kawsar Ahmed Kazol. All rights reserved.</p>
+            <div class="footer-social">
+                <a href="https://github.com/kazol196295" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/kawsar-ahmed-kazol-600340197/" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:kazol196295@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+            </div>
         </div>
     </footer>
 
