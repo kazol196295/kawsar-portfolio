@@ -589,21 +589,59 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const slides = Array.from(track.children);
     let currentIndex = 0;
+    let autoSlideInterval; // Variable to store the timer
 
     function updateSliderPosition() {
         // Moves the track horizontally by 100% of the container width per slide
         track.style.transform = `translateX(-${currentIndex * 100}%)`;
     }
 
-    nextBtn.addEventListener('click', () => {
+    function moveToNextSlide() {
         // Loops back to the first slide if at the end
         currentIndex = (currentIndex + 1) % slides.length;
         updateSliderPosition();
-    });
+    }
 
-    prevBtn.addEventListener('click', () => {
+    function moveToPrevSlide() {
         // Loops back to the last slide if at the beginning
         currentIndex = (currentIndex - 1 + slides.length) % slides.length;
         updateSliderPosition();
+    }
+
+    // Function to start the automatic sliding every 2 seconds (2000ms)
+    function startAutoSlide() {
+        autoSlideInterval = setInterval(moveToNextSlide, 2000);
+    }
+
+    // Function to reset the timer when a user manually clicks a button
+    function resetAutoSlide() {
+        clearInterval(autoSlideInterval);
+        startAutoSlide();
+    }
+
+    // Button Event Listeners
+    nextBtn.addEventListener('click', () => {
+        moveToNextSlide();
+        resetAutoSlide(); // Reset timer on manual click
     });
+
+    prevBtn.addEventListener('click', () => {
+        moveToPrevSlide();
+        resetAutoSlide(); // Reset timer on manual click
+    });
+
+    // Start the auto-slide as soon as the page loads
+    startAutoSlide();
+
+    // Pause auto-slide when the user hovers over the slider container
+    const sliderContainer = document.querySelector('.slider-container');
+    if (sliderContainer) {
+        sliderContainer.addEventListener('mouseenter', () => {
+            clearInterval(autoSlideInterval);
+        });
+
+        sliderContainer.addEventListener('mouseleave', () => {
+            startAutoSlide();
+        });
+    }
 });
