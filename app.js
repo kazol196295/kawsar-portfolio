@@ -575,3 +575,35 @@ document.addEventListener('DOMContentLoaded', function() {
         'color: #007acc; font-size: 12px;'
     );
 });
+
+
+
+// --- Achievement Slider Logic ---
+document.addEventListener('DOMContentLoaded', () => {
+    const track = document.getElementById('sliderTrack');
+    const nextBtn = document.getElementById('nextBtn');
+    const prevBtn = document.getElementById('prevBtn');
+
+    // Safety check in case the slider isn't on the current page
+    if (!track || !nextBtn || !prevBtn) return;
+
+    const slides = Array.from(track.children);
+    let currentIndex = 0;
+
+    function updateSliderPosition() {
+        // Moves the track horizontally by 100% of the container width per slide
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    nextBtn.addEventListener('click', () => {
+        // Loops back to the first slide if at the end
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateSliderPosition();
+    });
+
+    prevBtn.addEventListener('click', () => {
+        // Loops back to the last slide if at the beginning
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateSliderPosition();
+    });
+});
