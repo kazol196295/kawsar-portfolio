@@ -1033,7 +1033,7 @@ section {
 /* Education Section */
 .education-card {
   max-width: 600px;
-  margin: 0 auto;
+  margin: 0 auto var(--space-24) auto;
   background: var(--portfolio-card-bg);
   border-radius: var(--radius-lg);
   padding: var(--space-32);
@@ -1042,6 +1042,10 @@ section {
   gap: var(--space-24);
   border: 1px solid rgba(0, 122, 204, 0.2);
   transition: transform var(--duration-normal) var(--ease-standard);
+}
+
+.education-card:last-child {
+  margin-bottom: 0;
 }
 
 .education-card:hover {
@@ -1082,6 +1086,28 @@ section {
 .education-location {
   font-size: var(--font-size-md);
   color: var(--portfolio-text-muted);
+}
+
+/* Experience List */
+.experience-list {
+  margin-top: var(--space-12);
+  padding-left: var(--space-20);
+  list-style: none;
+}
+
+.experience-list li {
+  font-size: var(--font-size-md);
+  color: var(--portfolio-text-muted);
+  line-height: 1.6;
+  margin-bottom: var(--space-8);
+  position: relative;
+}
+
+.experience-list li::before {
+  content: '•';
+  color: var(--portfolio-accent);
+  position: absolute;
+  left: calc(-1 * var(--space-16));
 }
 
 /* Skills Section */
